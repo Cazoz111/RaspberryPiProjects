@@ -4,9 +4,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-
-    return "welcome to cooper's rainbow app!"
-
+    
+    return render_template('rainbow.html')
+    
 
 @app.route('/red')
 def red():
@@ -61,6 +61,11 @@ def violet():
     background = "#4F2F4F"
 
     return render_template('rainbow.html', name = name, background = background)
+
+@app.route('/friends')
+def friends():
+    friends = ["Isreal", "Jason", "Abdul", "Roman"]
+    return render_template('rainbow.html', friends = friends)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

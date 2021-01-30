@@ -11,8 +11,22 @@
         }
 
     </style>
+
+    <ul>
+      {% for friend in friends %}
+      <h1>{{ friend }}</h1>
+      <li>Meet my friend {{ friend }}</li>
+      {% endfor %}
+    </ul>
   <h1>Cooper's Rainbow</h1>
   <h1>{{name}}</h1>
-
-  </body>
+<a href="http://0.0.0.0:5000/"><button>Press to go home</button></a>
+<a href="http://0.0.0.0:5000/red"><button>Press to go to red</button></a>
+<a href="http://0.0.0.0:5000/orange"><button>Press to go to orange</button></a>
+<a href="http://0.0.0.0:5000/yellow"><button>Press to go to yellow</button></a>
+<a href="http://0.0.0.0:5000/green"><button>Press to go to green</button></a>
+<a href="http://0.0.0.0:5000/blue"><button>Press to go to blue</button></a>
+<a href="http://0.0.0.0:5000/indigo"><button>Press to go to indigo</button></a>
+<a href="http://0.0.0.0:5000/violet"><button>Press to go to violet</button></a>
+</body>
 </html>
