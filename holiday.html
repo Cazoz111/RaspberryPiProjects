@@ -1,0 +1,17 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>Holidays</title>
+
+ <style>
+</style>
+</head>
+<body>
+    <h1>This is todays Holiday Image</h1>
+<p>{{data['localName']}}</p>
+{% for holiday in data %}
+    <h3>{{holiday['localName']}}</h3>
+    {% endfor %}
+<p></p>
+</body>
+</html>
