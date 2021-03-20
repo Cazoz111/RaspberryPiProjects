@@ -1,19 +1,22 @@
-from flask import Flask, render_template, request, json, jsonify, current_app as app
-from datetime import date
-import os
-import requests
-
-
-
+from flask import Flask, redirect,render_template, url_for, request
 app = Flask(__name__)
 
-@app.route('/brasil')
-def pic():
-        response = requests.get('https://date.nager.at/api/v2/publicholidays/2017/BR')
-        data = response.json()
+@app.route('/')
+def index():
+    return render_template('index.html')
+                           
+@app.route('/success/<name>')
+def success(name):
+   return 'welcome %s' % name
 
-        return render_template('holiday.html', data=data)
-
+@app.route('/login',methods = ['POST', 'GET'])
+def login():
+   if request.method == 'POST':
+      user = request.form['nm']
+      return redirect(url_for('success',name = user))
+   else:
+      user = request.args.get('nm')
+      return redirect(url_for('success',name = user))
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+   app.run(debug = True)
